@@ -1,0 +1,36 @@
+:root { color-scheme: light; font-family: "DM Sans", "Segoe UI", Arial, sans-serif; color: #101e3b; background: white; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.shell { max-width: 1280px; margin: auto; padding: 0 clamp(20px, 5vw, 72px); }
+header, footer { display: flex; align-items: center; justify-content: space-between; color: #52647a; font-size: .9rem; }
+header { height: 85px; border-bottom: 1px solid #dce4ee; }
+.logo { width: 148px; height: 55px; object-fit: cover; }
+.hero { display: grid; grid-template-columns: 1.12fr 1fr; gap: clamp(24px, 5vw, 76px); align-items: center; padding: clamp(40px, 7vw, 96px) 0; }
+h1, h2, p { margin: 0; }
+h1 { font-size: clamp(2.55rem, 5.2vw, 4.9rem); letter-spacing: -.06em; line-height: 1.05; }
+h1 span { color: #215ed7; }
+.intro, .about p { color: #46586e; line-height: 1.75; font-size: 1.05rem; }
+.intro { max-width: 48ch; margin: 24px 0 30px; }
+.cta { display: inline-flex; align-items: center; gap: 23px; border-radius: 12px; padding: 16px 22px; color: white; background: #204fc0; text-decoration: none; font-weight: 650; }
+.cta:hover { background: #143f9e; }
+.cta:focus-visible { outline: 3px solid #168398; outline-offset: 4px; }
+.art { position: relative; overflow: hidden; border-radius: 26px; background-color: #101e39; background-image: radial-gradient(#45536d 1px, transparent 1px); background-size: 17px 17px; }
+canvas { width: 100%; height: auto; display: block; }
+.about { display: grid; grid-template-columns: 1fr 2fr; gap: 32px; border-top: 1px solid #dce4ee; padding: 38px 0 50px; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); letter-spacing: -.04em; }
+footer { border-top: 1px solid #dce4ee; padding: 20px 0; }
+@media (max-width: 720px) {
+  header { height: 68px; }
+  .hero, .about { grid-template-columns: 1fr; }
+  .hero { gap: 32px; }
+  .art { max-width: 500px; width: 100%; justify-self: center; }
+  .about { gap: 14px; }
+}
+.guide { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr)); gap:18px; margin-bottom:48px; }
+.guide article { padding:24px; background:#f4f8ff; border-radius:14px; }
+.guide h3 { margin:0 0 12px; color:var(--brand); }
+.guide p { line-height:1.65; color:#46586e; }
+footer { justify-content:flex-start; gap:.3em; }
+.logo { width: clamp(175px, 23vw, 235px); height: 60px; object-fit: cover; object-position:center; }
+.logo-panel { background:white; border:1px solid #dae6f5; border-radius:24px; overflow:hidden; box-shadow:0 16px 54px #2356a811; }
+.logo-panel img { display:block; width:100%; height:auto; }

@@ -27,7 +27,7 @@ toggle.addEventListener('click', () => {
   toggle.setAttribute('aria-label', visible ? 'Құпиясөзді жасыру' : 'Құпиясөзді көрсету');
 });
 
-form.addEventListener('submit', event => {
+form.addEventListener('submit', async event => {
   event.preventDefault();
   clearErrors();
   if (!email.value.trim() || !email.validity.valid) {
@@ -51,5 +51,9 @@ form.addEventListener('submit', event => {
     firstError.focus();
     return;
   }
-  status.textContent = 'Тіркелу формасы дұрыс толтырылды. Нақты аккаунт ашу үшін backend қажет.';
+  try {
+    await api("/users", "POST", {full_name: fullName.value, phone: document.querySelector("#phone").value.trim() || null, email: email.value, password: password.value});
+    location.assign("login.html?registered=1");
+  } catch (error) { status.textContent = error.message; }
 });
+

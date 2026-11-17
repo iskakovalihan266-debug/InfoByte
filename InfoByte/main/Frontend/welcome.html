@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="kk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>InfoByte — оқу кабинеті</title>
+    <link rel="stylesheet" href="welcome.css">
+  </head>
+
+  <body>
+    <div class="layout">
+      <aside class="side">
+        <img class="logo" src="logo.jpg" alt="InfoByte">
+
+        <div class="caption">ОҚУ КАБИНЕТІ</div>
+
+        <nav class="nav" aria-label="Негізгі мәзір">
+          <a class="active" href="welcome.html">⌂ &nbsp; Басты бет</a>
+          <a href="library.html">▤ &nbsp; Кітапхана</a>
+          <a href="python.html">⌘ &nbsp; Python есептері</a>
+          <a href="tests.html">✓ &nbsp; ҰБТ тесттері</a>
+          <a href="mistakes.html">↻ &nbsp; Қателер дәптері</a>
+          <a href="progress.html">◷ &nbsp; Нәтижелерім</a>
+        </nav>
+
+        <div class="side-bottom">
+          <button class="logout" id="logout">
+            ↪ &nbsp; Аккаунттан шығу
+          </button>
+          <p id="message" class="status" role="status"></p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="top">
+          <span>InfoByte оқу платформасы</span>
+          <span class="profile">◉ &nbsp; {{full_name}}</span>
+        </header>
+
+        <section class="hero">
+          <span class="eyebrow">ЖЕКЕ ОҚУ КАБИНЕТІ</span>
+          <h1>Қош келдіңіз, {{full_name}}!</h1>
+          <p>Бүгін қай тақырыпты меңгереміз?</p>
+        </section>
+
+        <form class="search" action="library.html">
+          <label for="term">Кітаптан термин іздеу</label>
+
+          <div class="searchbar">
+            <input
+              id="term"
+              name="q"
+              placeholder="Мысалы, алгоритм, цикл, деректер қоры"
+            >
+            <button type="submit">Іздеу&nbsp; →</button>
+          </div>
+
+          <p class="hint">
+            Терминді жазып, кітаптағы түсіндірмесі мен бетін табыңыз.
+          </p>
+        </form>
+
+        <div class="section-head">
+          <h2>Оқуды жалғастыру</h2>
+          <span>Өзіңізге ыңғайлы бөлімді таңдаңыз</span>
+        </div>
+
+        <section class="cards">
+          <a class="card" href="library.html">
+            <span class="icon">⌕</span>
+            <h3>Кітапхана</h3>
+            <p>Оқулықтардан термин мен тақырыпты іздеу</p>
+          </a>
+
+          <a class="card" href="python.html">
+            <span class="icon">⌘</span>
+            <h3>Python есептері</h3>
+            <p>Есеп шығарып, бағдарламалау дағдыңызды шыңдаңыз</p>
+          </a>
+
+          <a class="card" href="tests.html">
+            <span class="icon">✓</span>
+            <h3>ҰБТ тесттері</h3>
+            <p>Информатика тақырыптарын сұрақтармен қайталау</p>
+          </a>
+
+          <a class="card" href="mistakes.html">
+            <span class="icon">↻</span>
+            <h3>Қателер дәптері</h3>
+            <p>Қиын болған тапсырмаларға қайта оралу</p>
+          </a>
+
+          <a class="card" href="progress.html">
+            <span class="icon">◷</span>
+            <h3>Нәтижелерім</h3>
+            <p>Оқу барысыңыз бен тест нәтижелерін қарау</p>
+          </a>
+
+          <a class="card" href="topics.html">
+            <span class="icon">▦</span>
+            <h3>Тақырыптар</h3>
+            <p>Информатика бөлімдерін ретімен меңгеру</p>
+          </a>
+        </section>
+
+        <aside class="note">
+          Алдымен терминді тауып, кейін сол тақырыптан есеп немесе тест
+          орындаңыз. Осылайша білгеніңізді бірден бекіте аласыз.
+        </aside>
+      </main>
+    </div>
+
+    <script src="welcome.js" defer></script>
+  </body>
+</html>
+

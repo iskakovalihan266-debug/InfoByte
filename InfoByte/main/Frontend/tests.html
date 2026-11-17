@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="kk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ҰБТ тесттері · InfoByte</title>
+<style>
+* {box-sizing:border-box}
+body {margin:0;background:#f3f6fc;color:#182942;font:16px/1.55 "Segoe UI",sans-serif}
+main,nav {width:min(860px,92%);margin:auto}
+header,section {background:white;border:1px solid #dbe4ee}
+nav,.actions {display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+nav {padding:18px 0} nav strong {font-size:24px} nav span,a {color:#2464c7}
+h1 {margin:32px 0 18px;font-size:clamp(28px,5vw,42px)}
+section {padding:clamp(18px,4vw,34px);border-radius:18px;margin-bottom:18px}
+button,select {font:inherit;border:1px solid #bbcada;border-radius:9px;padding:10px 14px;background:white;color:inherit;max-width:100%}
+button {cursor:pointer} button:disabled {opacity:.5}
+.primary,button[aria-pressed=true] {color:white;background:#215dc2}
+label {display:grid;gap:6px;margin-bottom:16px}
+.question {white-space:pre-wrap;overflow-wrap:anywhere}
+.options {display:grid;gap:10px;margin:20px 0}.options button {text-align:left}
+progress {width:100%;accent-color:#215dc2}
+#error {color:#a02328}details {padding:12px 0;border-bottom:1px solid #dbe4ee}
+</style></head><body><header><nav><strong>Info<span>Byte</span></strong><a href="/welcome.html">← Басты бет</a></nav></header>
+<main><h1>ҰБТ тесттері</h1><p id="error" role="alert"></p><div id="screen"></div></main>
+<script type="module" src="/shared/tests.js"></script></body></html>

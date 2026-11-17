@@ -27,12 +27,9 @@ toggle.addEventListener('click', () => {
   toggle.setAttribute('aria-label', visible ? 'Құпиясөзді жасыру' : 'Құпиясөзді көрсету');
 });
 
-document.querySelector('.forgot-button').addEventListener('click', () => {
-  status.classList.add('is-info');
-  status.textContent = 'Құпиясөзді қалпына келтіру сервер қосылғанда іске қосылады.';
-});
 
-form.addEventListener('submit', event => {
+
+form.addEventListener('submit', async event => {
   event.preventDefault();
   clearErrors();
   if (!email.value.trim() || !email.validity.valid) {
@@ -47,5 +44,13 @@ form.addEventListener('submit', event => {
     firstError.focus();
     return;
   }
-  status.textContent = 'Кіру формасы дұрыс толтырылды. Аккаунтты тексеру үшін backend қажет.';
+  try {
+    await api("/sessions", "POST", {email: email.value, password: password.value, remember: document.querySelector("#remember").checked});
+
+    location.replace("/welcome.html");
+  } catch (error) { status.textContent = error.message; }
 });
+
+if (new URLSearchParams(location.search).has('registered')) status.textContent = 'Тіркелу сәтті аяқталды. Енді аккаунтқа кіріңіз.';
+
+

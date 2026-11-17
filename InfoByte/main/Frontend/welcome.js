@@ -1,0 +1,1 @@
+document.querySelector('#logout').addEventListener('click',async()=>{try{const r=await fetch('/api/sessions/current',{method:'DELETE'});if(!r.ok&&r.status!==401)throw Error();location.replace('/infobyte-auth/login.html')}catch{document.querySelector('#message').textContent='Серверге қосылмады. Қайталап көріңіз.'}})
